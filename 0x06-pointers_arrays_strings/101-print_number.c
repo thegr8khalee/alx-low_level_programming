@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
   * print_number - Prints any integer with putchar
   * @n: Number to prints
