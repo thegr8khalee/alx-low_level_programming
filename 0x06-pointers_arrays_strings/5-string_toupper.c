@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * string_toupper - change lowercase to uppercase
  * @s:string
