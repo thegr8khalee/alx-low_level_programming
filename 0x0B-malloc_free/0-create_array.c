@@ -1,6 +1,10 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * task zero
+ */
+
 char *create_array(unsigned int size, char c)
 {
 	char *p;
