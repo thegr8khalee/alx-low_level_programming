@@ -1,14 +1,15 @@
 #include "function_pointers.h"
 
 /**
- * Write a function that prints a name
- * Prototype: void print_name(char *name, void (*f)(char *));
+ * print_name - a function that prints a name.
+ * @name: the name given
+ * @f: function of name
+ *
+ * Rteurn: void
  */
-
 void print_name(char *name, void (*f)(char *))
 {
 	if (name != NULL && f != NULL)
-	    	   return;
-	
+
 		f(name);
 }
