@@ -7,11 +7,11 @@
  */
 int  check(int x, int y)
 {
-	if (x * x == y)
-		return (y);
 	if (x * x > y)
 		return (-1);
-	return (check(x + 1, y));
+	if (x * x == y)
+		return (y);
+	return (check(y, x + 1));
 }
 
 /**
@@ -21,7 +21,7 @@ int  check(int x, int y)
  */
 int _sqrt_recursion(int n)
 {
-	if (n == 0)
-		return (0);
-	return (check(1, n));
+	if (n < 0)
+		return (-1);
+	return (check(n, 0));
 }
