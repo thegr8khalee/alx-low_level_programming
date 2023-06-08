@@ -16,13 +16,13 @@ int check(int a, int z)
 }
 
 /**
- * is_prime_number - returns 1 if the input integer is a prime number, otherwise return 0
- * @n: int 
+ * is_prime_number - returns 1 if the input integer is a prime number
+ * @n: int
  * return: int
  */
 int is_prime_number(int n)
 {
-	if (n ==2)
+	if (n == 2)
 		return (1);
 	return (check(2, n));
 }
