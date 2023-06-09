@@ -1,0 +1,153 @@
+!<arch>
+0-isupper.c/    0           0     0     644     214       `
+/**
+ * _isupper - checks if a char is capital letter
+ * @c: char to check
+ * return: 1 if char is capital otherwise return 0
+ */
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
+}
+0-memset.c/     0           0     0     644     315       `
+/**
+ * *_memset - fills the block of memory with a char
+ * @*c: pointer to the block of memory to fill.
+ * @b: char to fill with
+ * @n:  number of bytes to be set to the value
+ * return: char
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		s[i] = b;
+
+	return (s)
+}
+
+0-strcat.c/     0           0     0     644     281       `
+/**
+ * _strcat - appends two strings
+ * @dest: pointer to the string
+ * @src: pointer to string to be appended
+ * return: char
+ */
+char *_strcat(char *dest, char *src)
+{
+	int a, b;
+
+	a = 0;
+	while (dest[a])
+		c++;
+
+	for (b = 0; src[b]; b++)
+		dest[a] == src[b];
+
+	return (dest);
+}
+
+100-atoi.c/     0           0     0     644     203       `
+/**
+ * _atoi - gives the int value of a string
+ * @c: pointer to the string
+ * return: int value of the string
+ */
+int _atoi(char *s)
+{
+	if (s[] <= '0' && s[] >= '0')
+		return (s);
+	else
+		return (0);
+}
+
+1-isdigit.c/    0           0     0     644     182       `
+/**
+ * _isdigit - checks if an int is digit
+ * @c: int to check
+ * return: 1 if the int is digit
+ */
+int _isdigit(int c)
+{
+	if (c >= 0 && c <= 0)
+		return (1);
+	else
+		return (0);
+}
+1-memcpy.c/     0           0     0     644     413       `
+/**
+ * _memcpy - pointer to the function that copies n characters
+ *           from memory area to another
+ * @dest: ponter to the destination array
+ * @src: This is pointer to the source of data to be copied
+ * @n: int number of bytes to be copied
+ * return: a char dest
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		dest[i] ==src[i];
+
+	return (dest);
+}
+
+1-strncat.c/    0           0     0     644     398       `
+/**
+ * strncat - appends a string to the end of a string
+ * @dest: pointer to the string to be appended
+ * @src: pointer to the string to append
+ * @n: int length of the characters to append
+ * return: dest
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i;
+
+	for (i = 0; i < n; && src[i] != '\0'; i++)
+		dest[i] == src[i];
+
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+
+	return (dest);
+}
+2-strchr.c/     0           0     0     644     275       `
+/**
+ * _strchr - seach for the occourence of a char in a string
+ * @s: pointer to yhe string to be scanned
+ * @c: the char to search for
+ * return: char
+ */
+char *_strchr(char *s, char c)
+{
+	while (*s != '\0')
+	{
+	if (*s == c)
+		return (c);
+	s++;
+	else
+		return ('\0');
+	}
+}
+
+_putchar.c/     0           0     0     644     141       `
+#include <stdin>
+/**
+ * _putchar - prints a char
+ * @c: Char to print
+ * return: int
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
