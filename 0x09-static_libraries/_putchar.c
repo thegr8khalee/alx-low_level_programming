@@ -1,4 +1,5 @@
-#include <stdin>
+#include "main.h"
+#include <unistd.h>
 /**
  * _putchar - prints a char
  * @c: Char to print
