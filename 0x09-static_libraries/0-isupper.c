@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _isupper - checks if a char is capital letter
  * @c: char to check
