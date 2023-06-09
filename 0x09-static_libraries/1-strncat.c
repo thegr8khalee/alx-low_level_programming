@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * strncat - appends a string to the end of a string
  * @dest: pointer to the string to be appended
@@ -9,7 +10,7 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i;
 
-	for (i = 0; i < n; && src[i] != '\0'; i++)
+	for (i = 0; i < n && src[i] != '\0'; i++)
 		dest[i] == src[i];
 
 	while (i < n)
