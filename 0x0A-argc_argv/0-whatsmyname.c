@@ -6,6 +6,16 @@
  */
 int main(int argc, char* argv[])
 {
-	printf("%s\n", argv);
+	int i;
+
+	if (argc != 0)
+	{
+		for (i =0; i < argc; i++)
+			printf("%s", argv[i]);
+
+		printf("\n");
+	}
+	else
+		return (0);
 	return (0);
 }
