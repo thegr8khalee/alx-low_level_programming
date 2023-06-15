@@ -30,7 +30,7 @@ void _print(char *str, int l)
  * @num: string to multiply
  * @num_index: last number
  * @dest: destination
- * @dest index: highest index
+ * @dest_index: highest index
  *
  * Return: pointer to dest or NULL on failure
  */
@@ -70,7 +70,7 @@ int check_for_digit(char **av)
 {
 	int i, j;
 
-	for (i = 1; i <3; i++)
+	for (i = 1; i < 3; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 		{
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 	{
 		for (ti = 0; e[ti]; ti++)
 			_putchar(e[ti]);
-		exit (98);
+		exit(98);
 	}
 	for (l1 = 0; argv[1][l1]; l1++)
 	{
