@@ -1,5 +1,5 @@
 section .data
-	format db "Hello, Holberton", 0
+	format db "Hello, Holberton", 10, 0
 
 section .text
 	extern printf
@@ -14,5 +14,6 @@ main:
 
 	add rsp, 8
 
-	mav eax, 0
+	mov eax, 0
+	mov edi, 0
 	ret
