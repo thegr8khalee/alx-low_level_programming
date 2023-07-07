@@ -42,7 +42,7 @@ unsigned long int _pow(unsigned int b, unsigned int p)
 	unsigned long int n;
 	unsigned int i;
 
-	num = 1;
+	n = 1;
 	for (i = 1; i <= p; i++)
 	{
 		n *= b;
