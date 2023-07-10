@@ -1,4 +1,1 @@
-readme
-bsghebavbjkvjb rqhbrbw dSJC EHJVB LAJBDSMAN VCAWRJHVAJVLBJVR
-WVHBLEBVGIUETUBV  BVRBEJHBHFASJHbkjabvuyyvgbjhvbjherbv
-vjnerlbv boqberuvbfqervhb vqbvbhbvq veavhs b nfever
+0x15. C - File I/O
