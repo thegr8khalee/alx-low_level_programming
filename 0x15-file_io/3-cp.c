@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	const char *file_from;
 	const char *file_to;
 	int fd_dest;
-	char *buffer[BUFFER_SIZE];
+	char buffer[BUFFER_SIZE];
 	int fd_src;
 	ssize_t bytes_read, bytes_written;
 
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 		bytes_written = write(fd_dest, buffer, bytes_read);
 		if (bytes_written != bytes_read)
 		{
-			fprintf(stderr, "Error: CAn't write to %s\n", file_to);
+			fprintf(stderr, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
 	}
