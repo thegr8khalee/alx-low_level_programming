@@ -245,7 +245,7 @@ void close_elf(int elf)
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
-	int o, read;
+	int o, read_o;
 
 	o = open(argv[1], O_RDONLY);
 	if (o == -1)
@@ -260,8 +260,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-	read = read(o, header, sizeof(Elf64_Ehdr));
-	if (read == -1)
+	read_o = read(o, header, sizeof(Elf64_Ehdr));
+	if (read_o == -1)
 	{
 		free(header);
 		close_elf(o);
