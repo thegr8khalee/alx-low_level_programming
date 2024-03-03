@@ -1,5 +1,7 @@
 #include "main.h"
-/** main - print the name of an argument
+
+/**
+ *  main - print the name of an argument
  * @argc: argument
  * @argv: array of strings
  * Return: int
