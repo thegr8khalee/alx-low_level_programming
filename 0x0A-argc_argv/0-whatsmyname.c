@@ -2,7 +2,7 @@
 /** main - print the name of an argument
  * @argc: argument
  * @argv: array of strings
- * return: int
+ * Return: int
  */
 int main(int argc, char* argv[])
 {
