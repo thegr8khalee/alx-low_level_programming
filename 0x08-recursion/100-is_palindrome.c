@@ -2,7 +2,7 @@
 /**
  * _strlen_recursion - print length of string
  * @s: string
- * return: length of string
+ * Return: length of string
  */
 int _strlen_recursion(char *s)
 {
@@ -16,7 +16,7 @@ int _strlen_recursion(char *s)
  * @s: string
  * @i: left index
  * @j: right index
- * return: int
+ * Return: int
  */
 int pal_checker(char *s, int i, int j)
 {
@@ -32,7 +32,7 @@ int pal_checker(char *s, int i, int j)
 /**
  * is_palindrome - check if s is pal
  * @s: base string
- * return: int
+ * Return: int
  */
 int is_palindrome(char *s)
 {
