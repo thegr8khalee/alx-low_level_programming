@@ -3,7 +3,7 @@
  * check - check to see if the num is prime
  * @a: int
  * @z: int
- * return: int
+ * Return: int
  */
 int check(int a, int z)
 {
@@ -18,7 +18,7 @@ int check(int a, int z)
 /**
  * is_prime_number - returns 1 if the input integer is a prime number
  * @n: int
- * return: int
+ * Return: int
  */
 int is_prime_number(int n)
 {
