@@ -7,22 +7,18 @@
  */
 void print_number(int n)
 {
-	char buffer[20];
-	int i = 0, j = 0;
-	if (n == 0) _putchar('0');
+	unsigned int x;
+
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n *= -1;
 	}
-	while(n != 0)
-	{
-		j = n % 10;
-		buffer[i++] = '0' + j;
-		n = n / 10;
-	}
-	while (i > 0)
-	{
-		_putchar(buffer[--i]);
-	}
+
+	x = n;
+
+	if (x / 10)
+		print_number(x / 10);
+
+	_putchar(x % 10 + '0');
 }
