@@ -3,9 +3,9 @@
  * main - prints the number of arguments passed into it
  * @argc: number of arguments
  * @argv: array of arguments
- * return: int
+ * Return: int
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	(void)argv;
 
