@@ -4,92 +4,117 @@
 /**
  * countWords - counts the number of words in a string
  * @str: the string
- * Return: number of words in a string
+ *
+ * return: number of words in a string
  */
 int countWords(char *str)
 {
-	int i, count = 0, len = 0;
+        int i, count = 0, len = 0;
 
-	while (str[len])
-		len++;
+        while (str[len])
+                len++;
 
-	for (i = 0; i < len; i++)
-	{
-		if (str[i] == ' ')
-		{
-			if (str[i + 1] != ' ' && str[i + 1] != '\0')
-				count++;
-		}
-		else if (i == 0)
-			count++;
-	}
+        for (i = 0; i < len; i++)
+        {
+                if (str[i] != ' ' && (str[i + 1] == ' ' || (str[i + 1]) == '\0'))
+                        count++;
+        }
 
-	return (count);
+        return (count);
 }
 
 /**
- * _strllen - ...
- * @s:
+ * trim - ...
+ * @s: ...
+ * Return: ..
+*/
+void trim(char *s)
+{
+	int i, count = 0;
+
+	while(s[count] == ' ')
+	{
+		count++;
+	}
+	if (count != 0)
+	{
+		while(s[i + count] != '\0')
+		{
+			s[i] = s[i + count];
+			i++;
+		}
+	}
+}
+
+/**
+ * trims - ...
+ * @s: ...
  * Return: ...
 */
-int _strllen(char *s)
+void trims(char *s)
 {
-	int j = 0;
-
-	while(s[j] != '\0')
+	int i = 0, len = 0;
+	while(s[i] != '\0')
 	{
-		j++;
+		len++;
 	}
-	return (j);
+	while (len - 1 > 0)
+	{
+		if (s[len - 1] == ' ')
+			i--;
+		else
+			break;
+	}
+	s[len] = '\0';
 }
 /**
  * strtow - splits a string into words
  * @str: the string to split
- * Return  returns a pointer to an array of strings (words)
+ *
+ * return  returns a pointer to an array of strings (words)
  */
 char **strtow(char *str)
 {
-	char **words;
-	int llen, i, j, k, len, wordCount = 0, wordStart = -1, wordEnd = -1;
+        char **words;
+        int i, j, k, len, wordCount = 0, wordStart = -1, wordEnd = -1;
 
-	if (str == NULL || *str == '\0')
-		return (NULL);
-	if (*str == ' ')
-		return (NULL);
+        if (str == NULL || *str == '\0')
+            return (NULL);
 
-	wordCount = countWords(str);
+		trim(str);
+		trims(str);
+        wordCount = countWords(str);
 
-	words = (char **)malloc(sizeof(char *) * (wordCount + 1));
-	if (words == NULL)
-		return (NULL);
-	llen = _strllen(str);
-	for (i = 0, j = 0; i < wordCount; i++)
-	{
-		while (str[j] == ' ')
-			j++;
-		wordStart = j;
+		 words = (char **)malloc(sizeof(char *) * (wordCount + 1));
+        if (words == NULL)
+                return (NULL);
+        for (i = 0, j = 0; i < wordCount; i++)
+        {
+                while (str[j] == ' ')
+                        j++;
+                wordStart = j;
 
-		 while (j < llen && str[j] == ' ')
-            j++;
-		wordEnd = j - 1;
-		len = wordEnd - wordStart + 1;
+                while (str[j] != ' ' && str[j] != '\0')
+                        j++;
+                wordEnd = j - 1;
+                len = wordEnd - wordStart + 1;
 
-		words[i] = (char *)malloc(sizeof(char) * (len + 1));
-		if (words[i] == NULL)
-		{
-			for (k = 0; k < i; k++)
-				free(words[k]);
-			free(words);
-			return (NULL);
-		}
+                words[i] = (char *)malloc(sizeof(char) * (len + 1));
+                if (words[i] == NULL)
+                {
+                        for (k = 0; k < i; k++)
+                                free(words[k]);
+                        free(words);
+                        return (NULL);
+                }
 
-		for (k = 0; k < len; k++)
-			words[i][k] = str[wordStart++];
+                for (k = 0; k < len; k++)
+                        words[i][k] = str[wordStart++];
 
-		words[i][k] = '\0';
-	}
+                words[i][k] = '\0';
+        }
 
-	words[wordCount] = NULL;
+        words[wordCount] = NULL;
 
-	return (words);
+        return (words);
 }
