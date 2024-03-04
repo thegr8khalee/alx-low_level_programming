@@ -34,9 +34,9 @@ int countWords(char *str)
 */
 int _strllen(char *s)
 {
-	int i = 0, j = 0;
+	int j = 0;
 
-	while(s[i] != '\0')
+	while(s[j] != '\0')
 	{
 		j++;
 	}
