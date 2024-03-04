@@ -71,7 +71,7 @@ char **strtow(char *str)
 
 		 while (j < llen && str[j] == ' ')
             j++;
-		wordEnd = j;
+		wordEnd = j - 1;
 		len = wordEnd - wordStart + 1;
 
 		words[i] = (char *)malloc(sizeof(char) * (len + 1));
