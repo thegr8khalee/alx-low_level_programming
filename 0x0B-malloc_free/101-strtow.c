@@ -1,123 +1,97 @@
 #include "main.h"
 #include <stdlib.h>
 
+void util(char **, char *);
+void create_word(char **, char *, int, int, int);
+
 /**
- * countWords - counts the number of words in a string
+ * strtow - splits a string into words.
  * @str: the string
  *
- * return: number of words in a string
- */
-int countWords(char *str)
-{
-        int i, count = 0, len = 0;
-
-        while (str[len])
-                len++;
-
-        for (i = 0; i < len; i++)
-        {
-                if (str[i] != ' ' && (str[i + 1] == ' ' || (str[i + 1]) == '\0'))
-                        count++;
-        }
-
-        return (count);
-}
-
-/**
- * trim - ...
- * @s: ...
- * Return: ..
-*/
-void trim(char *s)
-{
-	int i, count = 0;
-
-	while(s[count] == ' ')
-	{
-		count++;
-	}
-	if (count != 0)
-	{
-		while(s[i + count] != '\0')
-		{
-			s[i] = s[i + count];
-			i++;
-		}
-		s[i] = '\0';
-	}
-}
-
-/**
- * trims - ...
- * @s: ...
- * Return: ...
-*/
-void trims(char *s)
-{
-	int i = 0, len = 0;
-	while(s[i] != '\0')
-	{
-		len++;
-	}
-	while (len - 1 > 0)
-	{
-		if (s[len - 1] == ' ')
-		{
-			len--;
-			s[len] = '\0';
-		}
-		else
-			break;
-	}
-}
-/**
- * strtow - splits a string into words
- * @str: the string to split
- *
- * return  returns a pointer to an array of strings (words)
+ * Return: returns a pointer to an array of strings (words)
  */
 char **strtow(char *str)
 {
-        char **words;
-        int i, j, k, len, wordCount = 0, wordStart = -1, wordEnd = -1;
+	int i, flag, len;
+	char **words;
 
-        if (str == NULL || *str == '\0')
-            return (NULL);
+	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
+		return (NULL);
 
-		trim(str);
-		trims(str);
-        wordCount = countWords(str);
+	i = flag = len = 0;
+	while (str[i])
+	{
+		if (flag == 0 && str[i] != ' ')
+			flag = 1;
+		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
+		{
+			flag = 0;
+			len++;
+		}
+		i++;
+	}
 
-		 words = (char **)malloc(sizeof(char *) * (wordCount + 1));
-        if (words == NULL)
-                return (NULL);
-        for (i = 0, j = 0; i < wordCount; i++)
-        {
-                while (str[j] == ' ')
-                        j++;
-                wordStart = j;
+	len += flag == 1 ? 1 : 0;
+	if (len == 0)
+		return (NULL);
 
-                while (str[j] != ' ' && str[j] != '\0')
-                        j++;
-                wordEnd = j - 1;
-                len = wordEnd - wordStart + 1;
+	words = (char **)malloc(sizeof(char *) * (len + 1));
+	if (words == NULL)
+		return (NULL);
 
-                words[i] = (char *)malloc(sizeof(char) * (len + 1));
-                if (words[i] == NULL)
-                {
-                        for (k = 0; k < i; k++)
-                                free(words[k]);
-                        free(words);
-                        return (NULL);
-                }
+	util(words, str);
+	words[len] = NULL;
+	return (words);
+}
 
-                for (k = 0; k < len; k++)
-                        words[i][k] = str[wordStart++];
+/**
+ * util - a util function for fetching words into an array
+ * @words: the strings array
+ * @str: the string
+ */
+void util(char **words, char *str)
+{
+	int i, j, start, flag;
 
-                words[i][k] = '\0';
-        }
+	i = j = flag = 0;
+	while (str[i])
+	{
+		if (flag == 0 && str[i] != ' ')
+		{
+			start = i;
+			flag = 1;
+		}
 
-        words[wordCount] = NULL;
+		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
+		{
+			create_word(words, str, start, i, j);
+			j++;
+			flag = 0;
+		}
 
-        return (words);
+		i++;
+	}
+
+	if (flag == 1)
+		create_word(words, str, start, i, j);
+}
+
+/**
+ * create_word - creates a word and insert it into the array
+ * @words: the array of strings
+ * @str: the string
+ * @start: the starting index of the word
+ * @end: the stopping index of the word
+ * @index: the index of the array to insert the word
+ */
+void create_word(char **words, char *str, int start, int end, int index)
+{
+	int i, j;
+
+	i = end - start;
+	words[index] = (char *)malloc(sizeof(char) * (i + 1));
+
+	for (j = 0; start < end; start++, j++)
+		words[index][j] = str[start];
+	words[index][j] = '\0';
 }
