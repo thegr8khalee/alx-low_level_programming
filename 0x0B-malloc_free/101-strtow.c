@@ -16,7 +16,12 @@ int countWords(char *str)
 
 	for (i = 0; i < len; i++)
 	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' || (str[i + 1]) == '\0'))
+		if (str[i] == ' ')
+		{
+			if (str[i + 1] != ' ' && str[i + 1] != '\0')
+				count++;
+		}
+		else if (i == 0)
 			count++;
 	}
 
