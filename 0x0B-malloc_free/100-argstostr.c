@@ -6,7 +6,7 @@
  * @ac: arguments count
  * @av: arguments
  *
- * Retrun: Returns a pointer to a new string, or NULL if it fails
+ * Return: Returns a pointer to a new string, or NULL if it fails
  */
 char *argstostr(int ac, char **av)
 {
