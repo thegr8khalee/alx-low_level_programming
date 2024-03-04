@@ -5,7 +5,7 @@
  * alloc_grid - ...
  * @width: width of 2d array
  * @height: height of 2d array
- * Retrun: pointer to a 2 dimensional array of integers
+ * Return: pointer to a 2 dimensional array of integers
  */
 int **alloc_grid(int width, int height)
 {
