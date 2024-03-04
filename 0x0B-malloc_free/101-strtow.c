@@ -5,7 +5,7 @@
  * countWords - counts the number of words in a string
  * @str: the string
  *
- * return: number of words in a string
+ * Return: number of words in a string
  */
 int countWords(char *str)
 {
@@ -27,7 +27,7 @@ int countWords(char *str)
  * strtow - splits a string into words
  * @str: the string to split
  *
- * return  returns a pointer to an array of strings (words)
+ * Return  returns a pointer to an array of strings (words)
  */
 char **strtow(char *str)
 {
