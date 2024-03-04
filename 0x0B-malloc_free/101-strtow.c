@@ -36,6 +36,8 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
+	if (str == "")
+		return (NULL);
 
 	wordCount = countWords(str);
 
