@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * creste_array - reates an array of chars,
+ * create_array - reates an array of chars,
  * @size: size of array
  * @c: char
  * Return: pointer to the array, or NULL if it fails
