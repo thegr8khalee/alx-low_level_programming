@@ -4,7 +4,6 @@
 /**
  * countWords - counts the number of words in a string
  * @str: the string
- *
  * Return: number of words in a string
  */
 int countWords(char *str)
@@ -31,13 +30,12 @@ int countWords(char *str)
 /**
  * strtow - splits a string into words
  * @str: the string to split
- *
  * Return  returns a pointer to an array of strings (words)
  */
 char **strtow(char *str)
 {
 	char **words;
-	int i, j, k, len, wordCount = 0, wordStart = -1, wordEnd = -1;
+	int i, j, q, k, len, wordCount = 0, wordStart = -1, wordEnd = -1;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
@@ -55,8 +53,10 @@ char **strtow(char *str)
 			j++;
 		wordStart = j;
 
-		while (str[j] != ' ' && str[j] != '\0')
-			j++;
+		for (q = len; q > 0; q--){
+			if (str[j] == ' ')
+				j++;
+		}
 		wordEnd = j - 1;
 		len = wordEnd - wordStart + 1;
 
