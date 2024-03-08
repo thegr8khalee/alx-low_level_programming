@@ -48,8 +48,8 @@ const listint_t **rev(const listint_t **list, size_t size,
 		newlist = malloc(size * sizeof(listint_t *));
 		if (newlist == NULL)
 		{
-				free(list);
-				exit(98);
+			free(list);
+			sexit(98);
 		}
 		for (i = 0; i < size - 1; i++)
 		{
