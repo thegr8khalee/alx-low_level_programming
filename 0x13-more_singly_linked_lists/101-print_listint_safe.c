@@ -51,7 +51,9 @@ const listint_t **rev(const listint_t **list, size_t size, const listint_t *new)
                 exit(98);
         }
         for (i = 0; i < size - 1; i++)
-                newlist[i] = list[i];
+		{
+			newlist[i] = list[i];
+		}
         newlist[i] = new;
         free(list);
         return (newlist);
